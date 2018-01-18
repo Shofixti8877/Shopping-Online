@@ -1,0 +1,43 @@
+
+<div class="row">
+  <div class = "login col-md-2 col-md-offset-1 ">
+    <button class="btn btn-success" type="button" id = "startShoppingBtn" name="startShopping" ng-click="shoppingView()" ng-if = "loggedIn">{{shoppingState}}</button></br></br>
+    <form class="form " action="/login" method="post" ng-submit="sendForm($event)" ng-hide = "loggedIn">
+      <div class="form-group">
+        <label for="username">
+        Email: </label><input class="form-control" type="text" name="username" id="username" ng-model = "username" value="">
+      </div>
+      <div class="form-group">
+        <label for="pass">
+      Pass: </label><input class="form-control" type="password" name="password" id="pass" ng-model = "password" value="">
+      </div>
+      <button class="btn btn-primary" type="submit" name="" ng-click = "validateUser(true)">Login</button>
+      <a href="#!/register">Sign up</a>
+    </form>
+    <h3 id="welcomeUser" ng-if = "loggedIn">Welcome {{name}}</h3>
+    <button id="logOutBtn" class="btn btn-default" ng-if = "loggedIn" ng-click = "logout()">Logout</button>
+    {{err}}
+  </div>
+  <div class="col-md-2">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-11 storeDescription">
+        <p>Reif Co. offers the best deals and prices anywhere in the world!</p>
+        <p>Only products of the highest quality are sold at our store.</p>
+        <div class="">
+          <img id= "quality" src="./images/Premium-Quality.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="row">
+      <div class="storeStats col-md-offset-1 col-md-11 ">
+        <p>Some statistics:</p>
+        <p>Available products in our store: {{productNumber}}</p>
+        <p>Number of orders submitted in our store: {{orderNumber}}</p>
+        <p id= "cartInfo" ng-if = "cartExists">You have an open cart from {{cartDate | date}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

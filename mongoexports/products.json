@@ -1,0 +1,8 @@
+{"_id":{"$oid":"5a3a804df7b94043c0213888"},"name":"yogurt","price":11,"categoryID":"1","imgPath":"https://storage.googleapis.com/sp-public/items/medium/11748.jpg?v=98","__v":0}
+{"_id":{"$oid":"5a3a80d9697b1b456ca62104"},"name":"1% milk","price":3,"categoryID":"1","imgPath":"https://storage.googleapis.com/sp-public/items/medium/11017.jpg?v=26","__v":0}
+{"_id":{"$oid":"5a3a80f2697b1b456ca62105"},"name":"3% Milk","categoryID":"1","price":3,"imgPath":"https://storage.googleapis.com/sp-public/items/medium/11018.jpg?v=23","__v":0}
+{"_id":{"$oid":"5a3a8154eddb652f5cf7a622"},"name":"eggs","categoryID":"1","price":15,"imgPath":"https://storage.googleapis.com/sp-public/items/medium/31163.jpg?v=1","__v":0}
+{"_id":{"$oid":"5a5e0e078f25846ec8a74330"},"name":"Tomatoes","categoryID":"2","price":7,"imgPath":"https://storage.googleapis.com/sp-public/retailerItems/1062/medium/1985513.jpg?v=1","__v":0}
+{"_id":{"$oid":"5a5e54b022ea3475d0dee3b6"},"name":"Pastrame","categoryID":"3","price":15,"imgPath":"https://storage.googleapis.com/sp-public/retailerItems/1062/medium/1522694.jpg?v=2","__v":0}
+{"_id":{"$oid":"5a5e550622ea3475d0dee3b7"},"name":"Jem's Beer","categoryID":"4","price":12,"imgPath":"https://storage.googleapis.com/sp-public/items/medium/153913.jpg?v=8","__v":0}
+{"_id":{"$oid":"5a5e557b22ea3475d0dee3b8"},"name":"Coca Cola","categoryID":"4","price":3,"imgPath":"https://storage.googleapis.com/sp-public/items/medium/333590.jpg?v=7\"","__v":0}

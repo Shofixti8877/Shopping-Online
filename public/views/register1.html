@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>registration 1</title>
+  </head>
+  <body>
+    <div class="formContainer">
+    <form class="form" action="" method="post" ng-submit="sendForm($event)" id="Form1" name= "Form1">
+      ID <input class="form-control" type="text" required ng-model="id" id="idInput" ></br></br>
+      E-mail <input class="form-control" type="email" required ng-model="username" value=""></br></br>
+      Password <input class="form-control" type="password" required ng-model="pass1" id = "pass1" value=""></br></br>
+      re-enter Password <input class="form-control" type="password" required ng-model="pass2" id = "pass2" value=""></br></br>
+      <button  name="Next" class="btn btn-primary" ng-click ="changeView('register2')">Next</button></br>
+      {{error}}
+    </form>
+    </div>
+  </body>
+</html>

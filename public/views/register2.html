@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>registration 2</title>
+  </head>
+  <body>
+    <div class="formContainer">
+    <form class="form" action="/" ng-submit="sendForm($event)" method="post" id="Form2" name= "Form2">
+      City <select class="form-control" name ="cities" required ng-model="cityName" ng-options="x.name for x in cities">
+            <option></option>
+          </select></br></br>
+      Street <input class="form-control" type="text" required ng-model="street" value=""></br></br>
+      First Name <input class="form-control" type="text" required ng-model="fname" value=""></br></br>
+      Last Name <input class="form-control" type="text" required ng-model="lname" value=""></br></br>
+      <button class="btn btn-primary" name="Next" ng-click= "submitRegistration('/')">Sumbit</button>
+    </form>
+  </div>
+  </body>
+</html>

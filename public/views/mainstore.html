@@ -1,0 +1,68 @@
+<div storeWrapper class="row storeWrapper">
+<md-sidenav id="side" class="cartPanel col-md-2 md-sidenav-left" md-component-id="left" md-disable-backdrop="" md-is-open="true" >
+  <p id="myCart">My Cart</p>
+  <div ng-repeat = "item in cart" ng-if="$index > 0">
+  <p class = "cartItem" id="{{item.productID}}"> <img class= "cartImage" src= "{{item.imgPath}}"> {{item.name}},
+    {{item.amount}},
+    {{item.totalPrice}} ₪
+     <md-button class="delButton" ng-click="removeCartItem($event)"><i class="material-icons clear">clear</i></md-button>
+  </p>
+  </div>
+    <p id="total">Total: {{totalPrice.cartTotal}} ₪</p>
+    <md-button id="delAll" ng-click = "removeAll()">Delete all items</md-button>
+    <md-button class="md-primary md-raised md-button md-ink-ripple" ng-click = "orderView()">Submit Order</md-button>
+    {{cartError}}
+    {{err}}
+</md-sidenav>
+<div class="storePanel col-md-9">
+  <div class= "row">
+  <div class="categories col-md-9">
+    <div class = "category" ng-repeat = "x in categories" id="{{ 'cat-' + x._id }}" ng-click="showCategoryItems($event)"> {{x.name}}</div>
+  </div>
+  <div class="search col-md-2">
+    Search Products:</br> <input class= "form-control" type="text" name="search" id="search" ng-change="search(product)" ng-model = "product" value="">
+  </div>
+</div>
+  <div class="products">
+    <div class = "product" ng-repeat = "x in products" ng-click= "showProduct($event)" id= "{{x._id}}" name = "{{x.name}}" price = "{{x.price}}"><img class = "productImage" src="{{x.imgPath}}"><p class = "productDesc"> {{x.name}} {{x.price +' ₪'}}</p>
+
+    </div>
+  </div>
+  <md-button ng-click="toggleLeft()" class="md-primary md-raised md-button md-ink-ripple" >
+            {{toggleBtn}}
+          </md-button>
+</div>
+</div>
+
+<script type="text/ng-template" id="dialog1.tmpl.html"><md-dialog>
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{title}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2 id="choose">Choose amount</h2>
+        <md-button class="md-primary md-raised md-button md-ink-ripple" ng-click = "minusOne()">-</md-button>
+        <input type = "text" ng-model = "amount">
+        <md-button class="md-primary md-raised md-button md-ink-ripple" ng-click = "plusOne()">+</md-button>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="cancel()">
+       Back
+      </md-button>
+      <md-button ng-click="addToCart()">
+        Add to cart
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+</script>

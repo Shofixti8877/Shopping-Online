@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app='app1' >
+  <head>
+    <meta charset="utf-8">
+    <title>Amit's Groceries</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/master.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-cookies.js"></script>
+
+ <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
+    <script type="text/javascript" src= "./JS/ng-app.js"></script>
+
+    </script>
+  </head>
+  <body>
+    <header  id="header" class ="page-header" >
+      <div class="row">
+      <img id="logo" class = "col-md-1 " src="./images/logo.jpg">
+      <div id= "welcome" class="col-md-3 col-md-offset-1">
+        Welcome to the Reif Co. on-line shopping service!
+      </div>
+      <div id= "quote" class="col-md-3 col-md-offset-4">
+        "We sell stuff" - Reif Co.
+      </div>
+    </div>
+    </header>
+    <div class="main" >
+      <div ng-view>
+
+      </div>
+
+    </div>
+
+    <!-- controllers -->
+    <script type="text/javascript" src = "./JS/controllers/maincontroller.js"></script>
+    <script type="text/javascript" src = "./JS/controllers/shoppingcontroller.js"></script>
+    <script type="text/javascript" src = "./JS/controllers/ordercontroller.js"></script>
+    <script type="text/javascript" src = "./JS/controllers/admincontroller.js"></script>
+
+    <!-- services -->
+    <script type="text/javascript" src = "./JS/services/product.js"></script>
+    <script type="text/javascript" src = "./JS/services/currentcart.js"></script>
+    <script type="text/javascript" src = "./JS/services/register.js"></script>
+    <script type="text/javascript" src = "./JS/services/categories.js"></script>
+    <script type="text/javascript" src = "./JS/services/ajaxService.js"></script>
+  </body>
+</html>

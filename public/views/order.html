@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Order</title>
+  </head>
+  <body>
+    <div id = "finalCartPanel" class="cartPanel col-md-2" >
+      <p><span id="myCartOrder">My Cart</span> <button id = "backToShop" class="btn btn-primary" type="button" name="backToCart" ng-click= "backToShop()">Back to Shop</button></p>
+      <hr>
+      Search Cart: <input id = "searchCart" class="form-control" type="text" name="" value="" ng-model= "search" ng-change = "markItem()"></br>
+      <div ng-repeat = "item in cart" ng-if="$index > 0" >
+      <p class = "cartItem" id="{{item.productID}}"> <span class = "{{item.highlight}}">{{item.name}},
+        {{item.amount}},
+        {{item.totalPrice}} ₪</span>
+      </p>
+      </div>
+        Total: {{cart[0].cartTotal}} ₪
+      {{total}}
+      {{err}}
+    </div>
+    <div id ="orderPanel" class="storePanel col-md-3 col-md-offset-1">
+      <form class="form" action="/" ng-submit="sendForm($event)" method="post" id="Order" name= "Order">
+        <h3>Order details</h3>
+        <hr>
+        <div class = "details">
+        Shipping Details:</br>
+        City <input type = "text" class="form-control" name ="cities" required ng-model="cityName"  ng-dblclick="userInput('city')">
+        Street <input type="text" class="form-control" required name="" ng-model="street" ng-dblclick="userInput('street')" value="">
+        <label for="date">Shipping Date </label><input class="form-control" id="date" type="date" ng-model="sendDate" required>
+        <div id= "payments" class="">
+          Payments:</br>
+          Credit Card <input type = "text" class="form-control" ng-model = "creditCard" id= "creditCard" required>
+        </div>
+        <button  id = "orderBtn" class = "btn btn-success" ng-click= "submitRegistration($event)">Place Order</button>
+      </form>
+      <p>{{err}}</p>
+      </div>
+    </div>
+
+    <script type="text/ng-template" id="dialog2.tmpl.html"><md-dialog>
+      <form ng-cloak>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2>Order successful!</h2>
+            <span flex></span>
+
+          </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+          <div class="md-dialog-content">
+            <p>You order has been successfully placed! click <a href = "{{textFile}}" download ="recipt.txt" id="downloadLink">here</a> to download your recipt </p>
+
+          </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+          <span flex></span>
+          <md-button ng-click="backToMain()">
+            Done
+          </md-button>
+        </md-dialog-actions>
+      </form>
+    </md-dialog>
+    </script>
+
+  </body>
+</html>

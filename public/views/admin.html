@@ -1,0 +1,31 @@
+<div class="row storeWrapper">
+<md-sidenav class="cartPanel col-md-2 md-sidenav-left" md-component-id="left" md-disable-backdrop="" md-is-open="true" >
+  <span id= "addnew" ng-click = "newProductForm()" class="glyphicon glyphicon-plus"></span>
+  <form id= "adminForm" class="" ng-hide="!showForm" method="post">
+  <h2 ng-hide="!newProductPressed">New Product</h2>
+  <h2>{{productName}}</h2>
+  <span ng-hide="newProductPressed" id="productId">Product ID: {{productId}} </span></br>
+  <p>Product Name: <input type="text" class= "form-control" ng-model ="productName" required size="18"> </p>
+  <p>Product Price: <input type="text" class= "form-control" ng-model ="productPrice" required size="2"><span id= "nis">₪</span></p>
+  <p>Picture: <input type="text" class= "form-control" ng-model ="productImg" required size="25"> </p>
+  <p>Category ID: <input type="text" class= "form-control" ng-model ="productCategory" required size="2" ng-change = "checkCat()"> </p>
+  <p>Category Name: {{productCategoryName}} </p>
+  <md-button type = "submit" class="md-primary md-raised md-button md-ink-ripple" ng-click = "saveToDB()">Save</md-button>
+  {{adminError}}
+  {{err}}
+  </form>
+</md-sidenav>
+<div class="storePanel col-md-9">
+  <div class="categories col-md-9">
+    <span class = "category" ng-repeat = "x in categories" id="{{ 'cat-' + x._id }}" ng-click="showCategoryItems($event)"> {{x.name}} </span>
+  </div>
+  <div class="search col-md-2">
+    Search Products: <input type="text" class= "form-control" name="search" id="search" ng-change="search(product)" ng-model = "product" value="">
+  </div>
+  <div id = "adminProducts" class="products">
+    <div class = "product" ng-repeat = "x in products" ng-click= "showProduct($event)" id= "{{x._id}}" name = "{{x.name}}" price = "{{x.price}}" category = "{{x.categoryID}}"><img class = "productImage" src="{{x.imgPath}}"><p class = "productDesc"> {{x.name}} {{x.price +' NIS'}}</p>
+
+    </div>
+  </div>
+</div>
+</div>
